@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <!-- Crop Yield Prediction -->
+
+  <div class="card m-5">
+    <div class="card-body">
+      <h5 class="card-title">Crop Yield Prediction</h5>
+      <hr class="hr hr-blurry" />
+      <form action="" method="post">
+        <div class="mb-3">
+          <label for="crop" class="form-label">Crop</label>
+          <input type="text" class="form-control" id="crop" name="crop" />
+          <div id="emailHelp" class="form-text">
+            Specify the crop that you want to grow on this piece of land.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input type="text" class="form-control" id="year" name="year" />
+          <div id="emailHelp" class="form-text">
+            Specify the year for which you want to get the information about the
+            crop yield.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="rainfall" class="form-label">Average Rainfall</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rainfall"
+            name="rainfall"
+          />
+          <div id="emailHelp" class="form-text">
+            Specify the rainfall level of the soil where you are willing to grow
+            the crops.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="pesticides" class="form-label">Pesticides</label>
+          <input
+            type="text"
+            class="form-control"
+            id="pesticides"
+            name="pesticides"
+          />
+          <div id="emailHelp" class="form-text">
+            Specify the pesticides content of the soil over which you are
+            willing to grow the crops.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="temperature" class="form-label"
+            >Average Temperature</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="temperature"
+            name="temperature"
+          />
+          <div id="emailHelp" class="form-text">
+            Specify the average temperature of the soil and weather over which
+            you are willing to grow the crops.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
