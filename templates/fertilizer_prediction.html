@@ -19,10 +19,10 @@
         <div class="card-body">
           <h5 class="card-title">Fertilizer Prediction</h5>
           <hr class="hr hr-blurry" />
-          <form>
+          <form method="post">
             <div class="mb-3">
               <label for="nitrogen" class="form-label">Nitrogen</label>
-              <input type="text" class="form-control" id="nitrogen" />
+              <input type="text" class="form-control" id="nitrogen" name="nitrogen" />
               <div id="emailHelp" class="form-text">
                 Specify the Nitrogen content of the soil over which you are
                 willing to grow the crops.
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
               <label for="phosphorus" class="form-label">Phosphorus</label>
-              <input type="text" class="form-control" id="phosphorus" />
+              <input type="text" class="form-control" id="phosphorus" name="phosphorus" />
               <div id="emailHelp" class="form-text">
                 Specify the Phosphorus content of the soil over which you are
                 willing to grow the crops.
@@ -38,7 +38,7 @@
             </div>
             <div class="mb-3">
               <label for="potassium" class="form-label">Potassium</label>
-              <input type="text" class="form-control" id="potassium" />
+              <input type="text" class="form-control" id="potassium" name="potassium" />
               <div id="emailHelp" class="form-text">
                 Specify the Potassium content of the soil over which you are
                 willing to grow the crops.
@@ -46,7 +46,7 @@
             </div>
             <div class="mb-3">
               <label for="temperature" class="form-label">Temperature</label>
-              <input type="text" class="form-control" id="temperature" />
+              <input type="text" class="form-control" id="temperature" name="temperature" />
               <div id="emailHelp" class="form-text">
                 Specify the Temperature of the soil and weather over which you
                 are willing to grow the crops.
@@ -54,7 +54,7 @@
             </div>
             <div class="mb-3">
               <label for="humidity" class="form-label">Humidity</label>
-              <input type="text" class="form-control" id="humidity" />
+              <input type="text" class="form-control" id="humidity" name="humidity" />
               <div id="emailHelp" class="form-text">
                 Specify the Humidity of the soil and weather over which you are
                 willing to grow the crops.
@@ -62,29 +62,34 @@
             </div>
             <div class="mb-3">
               <label for="moisture" class="form-label">Moisture</label>
-              <input type="text" class="form-control" id="moisture" />
+              <input type="text" class="form-control" id="moisture" name="moisture" />
               <div id="emailHelp" class="form-text">
                 Specify the moisture content of the soil over which you are
                 willing to grow the crops.
               </div>
             </div>
             <div class="mb-3">
-              <label for="rainfall" class="form-label">Rainfall</label>
-              <input type="text" class="form-control" id="rainfall" />
+              <label for="soil" class="form-label">Soil Type</label>
+              <input type="text" class="form-control" id="soil" name="soil" />
               <div id="emailHelp" class="form-text">
-                Specify the rainfall level of the soil where you are willing to
+                Specify the type of the soil where you are willing to
                 grow the crops.
               </div>
             </div>
             <div class="mb-3">
               <label for="crop" class="form-label">Crop Type</label>
-              <input type="text" class="form-control" id="crop" />
+              <input type="text" class="form-control" id="crop" name="crop" />
               <div id="emailHelp" class="form-text">
                 Specify the crop that you are willing to grow over this piece of
                 land.
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Predict</button>
+            {% if fertilizer %}
+            <div class="alert alert-success" role="alert">
+              {{fertilizer}} is the best fertilizer suitable for this land!
+            </div>
+            {% endif %}
           </form>
         </div>
       </div>

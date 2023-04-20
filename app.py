@@ -7,7 +7,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='css')
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -112,24 +112,36 @@ def register():
     return render_template('register.html', form=form)
 
 
+crops = ['rice', 'maize', 'chickpea', 'kidneybeans', 'pigeonpeas', 'mothbeans',
+         'mungbean', 'blackgram', 'lentil', 'pomegranate', 'banana', 'mango', 'grapes',
+         'watermelon', 'muskmelon', 'apple', 'orange', 'papaya', 'coconut', 'cotton',
+         'jute', 'coffee']
+encoded_crops_type = [20, 11, 3, 9, 18, 13, 14, 2,
+                      10, 19, 1, 12, 7, 21, 15, 0, 16, 17, 4, 6, 8, 5]
+
+
 @app.route('/crop-recommend', methods=['GET', 'POST'])
 def crop_predict():
-    # if request.method == 'POST':
-    #     nitrogen = request.form.get('nitrogen')
-    #     phosphorus = request.form.get('phosphorus')
-    #     potassium = request.form.get('potassium')
-    #     temperature = request.form.get('temperature')
-    #     humidity = request.form.get('humidity')
-    #     ph = request.form.get('ph')
-    #     rainfall = request.form.get('rainfall')
+    if request.method == 'POST':
+        nitrogen = request.form.get('nitrogen')
+        phosphorus = request.form.get('phosphorus')
+        potassium = request.form.get('potassium')
+        temperature = request.form.get('temperature')
+        humidity = request.form.get('humidity')
+        ph = request.form.get('ph')
+        rainfall = request.form.get('rainfall')
 
-    #     prediction = crop_predictor.predict(
-    #         [[nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall]]
-    #     )
-    #     crop = prediction[0]
+        prediction = crop_predictor.predict(
+            [[nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall]]
+        )
 
-    #     print(crop)
-    #     return render_template('crop_recommendation.html', crop=crop)
+        for i in range(22):
+            if encoded_crops_type[i] == prediction[0]:
+                crop = crops[i]
+                break
+
+        print(crop)
+        return render_template('crop_recommendation.html', crop=crop)
 
     return render_template('crop_recommendation.html')
 
@@ -151,27 +163,48 @@ def crop_yield_predict():
     return render_template('crop_yield_prediction.html')
 
 
+soil_type = ['Sandy', 'Loamy', 'Black', 'Red', 'Clayey']
+encoded_soil_type = [4, 2, 0, 3, 1]
+crop_type = ['Maize', 'Sugarcane', 'Cotton', 'Tobacco', 'Paddy',
+             'Barley', 'Wheat', 'Millets', 'Oil seeds', 'Pulses', 'Ground Nuts']
+encoded_crop_type = [3, 8, 1, 9, 6, 0, 10, 4, 5, 7, 2]
+fertilizer_type = ['Urea', 'DAP', '14-35-14',
+                   '28-28', '17-17-17', '20-20', '10-26-26']
+encoded_fertilizer_type = [6, 5, 1, 4, 2, 3, 0]
+
+
 @app.route('/fertilizer-predict', methods=['GET', 'POST'])
 def fertilizer_predict():
-    # if request.method == 'POST':
-    #     nitrogen = request.form.get('nitrogen')
-    #     phosphorus = request.form.get('phosphorus')
-    #     potassium = request.form.get('potassium')
-    #     temperature = request.form.get('temperature')
-    #     humidity = request.form.get('humidity')
-    #     moisture = request.form.get('moisture')
-    #     soil = request.form.get('soil')
-    #     crop = request.form.get('crop')
+    if request.method == 'POST':
+        nitrogen = request.form.get('nitrogen')
+        phosphorus = request.form.get('phosphorus')
+        potassium = request.form.get('potassium')
+        temperature = request.form.get('temperature')
+        humidity = request.form.get('humidity')
+        moisture = request.form.get('moisture')
+        soil = request.form.get('soil')
+        crop = request.form.get('crop')
 
-    #     print(crop)
+        for i in range(5):
+            if soil_type[i] == soil:
+                encoded_s = encoded_soil_type[i]
+                break
 
-    #     prediction = fertilizer_predictor.predict(
-    #         [[temperature, humidity, moisture, soil, crop, nitrogen, potassium, phosphorus]]
-    #     )
-    #     fertilizer = prediction[0]
+        for i in range(11):
+            if crop_type[i] == crop:
+                encoded_c = encoded_crop_type[i]
+                break
 
-    #     print(fertilizer)
-    #     return render_template('fertilizer_prediction.html', fertilizer=fertilizer)
+        prediction = fertilizer_predictor.predict(
+            [[temperature, humidity, moisture, encoded_s,
+                encoded_c, nitrogen, potassium, phosphorus]]
+        )
+        for i in range(7):
+            if prediction[0] == encoded_fertilizer_type[i]:
+                fertilizer = fertilizer_type[i]
+                break
+
+        return render_template('fertilizer_prediction.html', fertilizer=fertilizer)
 
     return render_template('fertilizer_prediction.html')
 
