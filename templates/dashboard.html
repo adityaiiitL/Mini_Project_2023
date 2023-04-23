@@ -1,412 +1,315 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
       rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <style></style>
+    <title>AgroAI</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <!-- Navbar starts -->
-    <section>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">AgroAI</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#features">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#shop">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-            <a
-              href="{{ url_for('logout') }}"
-              class="btn btn-outline-dark d-flex"
-            >
-              Logout
+    <header>
+      <nav>
+        <!-- left side menu  -->
+        <div class="left-side-menu">
+          <div class="logo" style="width: 5px; height: 120px;">
+            <a href="#">
+              <img src="../css/AgroAI-logo (1).png" alt="" />
+            </a>
+          </div>
+
+          <div class="sub-menu">
+            <a href="#">
+              <li>Home</li>
+            </a>
+            <a href="#features">
+              <li>Features</li>
+            </a>
+            <a href="#shop">
+              <li>Shop</li>
+            </a>
+            <a href="#team">
+              <li>Team</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
+            </a>
+          </div>
+        </div>
+
+        <!-- right side menu  -->
+        <div class="right-side-menu">
+          <div class="sub-menu">
+            <a href="{{ url_for('logout') }}">
+              <button>Logout</button>
             </a>
           </div>
         </div>
       </nav>
-    </section>
-    <!-- Navbar ends -->
+    </header>
 
-    <!-- Home section starts -->
-    <section id="home">
-      <div class="container m-5 text-center">
-        <h1>Precison Farming and Predictive Analysis of Crop Yield</h1>
+    <!-- ----------------------------- our hero section start, 
+      Plz susbsribe to Thapa Technical. It means a world to me. 
+        ---------------------------------------------------------------------- -->
+    <section class="main-hero-section">
+      <!-- left side code   -->
+      <div class="hero-left-side">
+        <h1>Precision Farming and Predictive Analysis</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-          distinctio dolor optio totam fugiat, doloremque ut aspernatur repellat
-          ea sed. Exercitationem porro cumque similique laborum quae. Nam odio
-          beatae consequatur inventore, pariatur, odit consectetur ea eos totam
-          accusantium fuga illum nesciunt? Fuga iure mollitia tempora
-          voluptatum, quos deleniti praesentium laboriosam.
+          We specialize in precision farming and predictive analysis of crop
+          yield, using advanced technologies to optimize production and minimize
+          waste for a more sustainable future of farming.
         </p>
-        <a href="#features">
-          <button type="button" class="btn btn-dark">Get Started</button>
+      </div>
+      <!-- right side code   -->
+      <div class="hero-right-side">
+        <img src="../css/3411468.jpg" alt="heropageImg" />
+      </div>
+    </section>
+    <!-- ----------------------------- our 2nd section start 
+      Plz susbsribe to Thapa Technical. It means a world to me. 
+        ---------------------------------------------------------------------- -->
+
+    <section class="common-section" id="section-two">
+      <!-- left side of section 2  -->
+      <div class="left-side">
+        <figure>
+          <img src="../css/prediction.png" alt="section2" />
+        </figure>
+      </div>
+
+      <!-- right side of section 2  -->
+      <div class="right-side">
+        <h2>Make predictions and enhance Crop Yield</h2>
+        <p>
+          We provide you with some very amazing features of the application that
+          allow us to predict the best suitable crop for our farm, recommends
+          fertilizers for them and then resulting crop yield.
+        </p>
+        <div class="button-group">
+          <button class="common-button">
+            <a href="#features" style="color: white">get started</a>
+          </button>
+          <button class="common-button-normal">
+            <a href="#how_it_works" style="color: black">how it works</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------- our 3rd section start 
+      Plz susbsribe to Thapa Technical. It means a world to me. 
+        ---------------------------------------------------------------------- -->
+    <section class="section-third" id="features">
+      <h2>Features</h2>
+      <p>
+        The application offers a range of features to support precision farming
+        and maximize crop yield.
+      </p>
+      <div class="section-third-task">
+        <a href="{{ url_for('crop_predict') }}">
+          <div class="task-1">
+            <img src="../css/crops.png" alt="icon1" />
+            <h3>Crop Recommendation</h3>
+            <p>
+              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+              Velit officia consequat
+            </p>
+          </div>
+        </a>
+
+        <a href="{{ url_for('fertilizer_predict') }}">
+          <div class="task-2">
+            <img src="../css/fertilizers.png" alt="icon1" />
+            <h3>Fertilizers Recommendation</h3>
+            <p>
+              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+              Susbcribe to ThapaTechncial.
+            </p>
+          </div>
+        </a>
+
+        <a href="{{ url_for('crop_yield_predict') }}">
+          <div class="task-3">
+            <img src="../css/yield.png" alt="icon1" />
+            <h3>Crop Yield Prediction</h3>
+            <p>
+              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+              Velit officia consequat
+            </p>
+          </div>
         </a>
       </div>
     </section>
-    <!-- Home section ends -->
+    <!-- ----------------------------- our 4th section start 
+      Plz susbsribe to Thapa Technical. It means a world to me 🙂. 
+        ---------------------------------------------------------------------- -->
 
-    <!-- Features Section starts -->
-    <section id="features">
-      <div class="container m-5 text-center">
-        <h2>Features</h2>
-        <div class="row">
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Crop Recommendation</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti vel a voluptatibus facere ipsum placeat laborum
-                voluptas neque alias, quae, sit ad illum suscipit in obcaecati
-                incidunt amet. Laborum, neque.
-              </p>
-              <a href="{{ url_for('crop_predict') }}" class="btn btn-dark"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Fertilizers Recommendation</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                incidunt deleniti dolore, amet eum minima quos quasi laborum
-                maxime fugit commodi nemo aliquam sapiente corporis rerum enim
-                repellendus harum reprehenderit.
-              </p>
-              <a href="{{ url_for('fertilizer_predict') }}" class="btn btn-dark"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Crop Yield Prediction</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                sapiente cumque delectus atque recusandae culpa, adipisci vel
-                tenetur sit? Officiis, quis maiores autem perferendis deleniti
-                adipisci hic ex officia maxime!
-              </p>
-              <a href="{{ url_for('crop_yield_predict') }}" class="btn btn-dark"
-                >Get Started</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Features Section ends -->
-
-    <!-- How it works starts-->
-    <section>
-      <div class="container text-center">
-        <h2>How It Works?</h2>
-        <div class="row">
-          <div class="col-sm">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              minus alias rerum aspernatur culpa labore similique, neque odit
-              est cupiditate porro. Labore nemo non dolorum dignissimos natus,
-              blanditiis debitis voluptate ex modi consequatur illo quia, quas
-              ducimus nostrum saepe in obcaecati quisquam rem eos harum maxime
-              delectus, accusantium ipsum laboriosam?
-            </p>
-          </div>
-          <div class="col-sm">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-              doloribus ipsam provident totam, quisquam, necessitatibus beatae
-              aspernatur dolorum iusto maxime voluptatem ipsum esse qui amet,
-              nemo consectetur repellat fugiat et perferendis quaerat delectus
-              ducimus assumenda eos. Cupiditate aperiam veniam fuga quos facilis
-              quidem, eum odit minima et incidunt, harum vitae!
-            </p>
-          </div>
-          <div class="col-sm">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              debitis at fugit ipsa recusandae ipsam esse laborum non, excepturi
-              soluta? Dolores delectus, omnis voluptas corrupti obcaecati iusto
-              molestias fugit, laudantium consequatur voluptatum esse tempore!
-              Porro voluptatibus corrupti magni possimus facere vitae, assumenda
-              sint, reiciendis perferendis neque obcaecati sed quidem harum?
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- How it works ends -->
-
-    <!-- Shop Section starts -->
-    <section id="shop">
-      <div class="container m-5">
-        <h2>Shop Now!</h2>
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Buy Fertilizers</h5>
-            <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-              libero mollitia temporibus illum adipisci praesentium nemo non,
-              neque sequi! A distinctio earum dicta neque qui ratione, laborum
-              magni quod minus?
-            </p>
-            <a href="#" class="btn btn-dark">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- shop section ends -->
-
-    <!-- team section starts -->
-    <section id="team">
-      <div class="container m-5 text-center">
-        <h2>Meet the Team</h2>
-        <div class="row">
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Aditya Agrawal</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti vel a voluptatibus facere ipsum placeat laborum
-                voluptas neque alias, quae, sit ad illum suscipit in obcaecati
-                incidunt amet. Laborum, neque.
-              </p>
-              <a
-                href="https://www.linkedin.com/in/aditya-agrawal-87ab6a200/"
-                class="btn btn-dark"
-                >Connect 🚀</a
-              >
-            </div>
-          </div>
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Tiya Bansal</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                incidunt deleniti dolore, amet eum minima quos quasi laborum
-                maxime fugit commodi nemo aliquam sapiente corporis rerum enim
-                repellendus harum reprehenderit.
-              </p>
-              <a
-                href="https://twitter.com/tiyatwts"
-                class="btn btn-dark"
-                target="_blank"
-                >Connect 🚀</a
-              >
-            </div>
-          </div>
-          <div class="col-sm card" style="width: 18rem">
-            <img src="/assets/farm.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Tanya Bharti</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                sapiente cumque delectus atque recusandae culpa, adipisci vel
-                tenetur sit? Officiis, quis maiores autem perferendis deleniti
-                adipisci hic ex officia maxime!
-              </p>
-              <a href="#" class="btn btn-dark">Connect 🚀</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- team section ends -->
-
-    <!-- contact section starts -->
-    <section id="contact">
-      <!-- Footer -->
-      <footer
-        class="text-center text-lg-start text-dark"
-        style="background-color: #eceff1"
-      >
-        <!-- Section: Social media -->
-        <section
-          class="d-flex justify-content-between p-4 text-white"
-          style="background-color: black"
-        >
-          <!-- Left -->
-          <div class="me-5">
-            <span>Get connected with us on social networks:</span>
-          </div>
-          <!-- Left -->
-
-          <!-- Right -->
-          <div>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-instagram"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-linkedin"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fa fa-github"></i>
-            </a>
-          </div>
-          <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <!-- Content -->
-                <h6 class="text-uppercase fw-bold">AgroAI</h6>
-                <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Products</h6>
-                <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-                <p>
-                  <a href="#!" class="text-dark">Crop Recommendation</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Fertilizers Recommendation</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Shop Fertilizers</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Crop Yield Prediction</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Useful links</h6>
-                <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-                <p>
-                  <a href="#!" class="text-dark">Your Account</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Become an Affiliate</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Shipping Rates</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-dark">Help</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Contact</h6>
-                <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-                <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-              </div>
-              <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-          </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(0, 0, 0, 0.2)"
-        >
-          © 2020 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
+    <section class="common-section" id="shop">
+      <!-- right side of section 2  -->
+      <div class="right-side" style="margin-left: 50px">
+        <h2>Shop from Us</h2>
+        <p>
+          We offer a wide range of fertilizers to support healthy and vibrant
+          crop growth. Our products are carefully selected and tested to ensure
+          maximum efficacy and safety for the environment.
+        </p>
+        <div class="button-group" style="margin-top: 20px">
+          <button
+            class="common-button"
+            style="background-color: rgb(124, 206, 0)"
           >
+            <a href="" style="color: white">Buy Now </a>
+          </button>
         </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
-    </section>
-    <!-- contact section ends -->
+      </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
+      <!-- left side of section 2  -->
+      <div class="left-side">
+        <img src="../css/shop.png" alt="section2" />
+      </div>
+    </section>
+
+    <!-- ----------------------------- our 5th section start 
+      Plz susbsribe to Thapa Technical. It means a world to me ✌. 
+        ---------------------------------------------------------------------- -->
+
+    <section class="common-section" id="how_it_works">
+      <!-- left side of section 2  -->
+      <div class="left-side">
+        <img src="../css/section5.png" alt="section5" />
+      </div>
+
+      <!-- right side of section 2  -->
+      <div class="right-side">
+        <h2>How It Works</h2>
+
+        <div class="fitness-goals">
+          <div class="rule1">
+            <h3>
+              <i class="fas fa-heart"></i> We will take care of your fitness
+              goals
+            </h3>
+            <p>
+              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Track your daily habits
+            </p>
+          </div>
+
+          <div class="rule2">
+            <h3>
+              <i class="fas fa-heart"></i> Track your daily habits with water
+            </h3>
+            <p>
+              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Track your daily habits
+            </p>
+          </div>
+
+          <div class="rule3">
+            <h3><i class="fas fa-heart"></i> Track your weight and waist</h3>
+            <p>
+              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Track your daily habits
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-third" id="team">
+      <div>
+        <h2>Our Team</h2>
+        <p>
+          Meet our talented team of experts who are dedicated to creating
+          innovative solutions that address the challenges facing farmers today
+          and helping them succeed in a rapidly changing world.
+        </p>
+      </div>
+      <div class="section-third-task" style="margin-top: 100px">
+        <div
+          class="task-1"
+          style="
+            background: #fff;
+            box-shadow: 0rem 0.4rem 2rem rgba(35, 52, 53, 0.25);
+          "
+        >
+          <img src="../css/sectionIcon1.png" alt="icon1" />
+          <h3>Aditya Agrawal</h3>
+          <p>
+            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+            Velit officia consequat
+          </p>
+        </div>
+
+        <div
+          class="task-2"
+          style="
+            background: #fff;
+            box-shadow: 0rem 0.4rem 2rem rgba(35, 52, 53, 0.25);
+          "
+        >
+          <img src="../css/sectionIcon2.png" alt="icon1" />
+          <h3>Tiya Bansal</h3>
+          <p>
+            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+            Susbcribe to ThapaTechncial.
+          </p>
+        </div>
+
+        <div class="task-3">
+          <img src="../css/sectionIcon3.png" alt="icon1" />
+          <h3>Tanya Bharti</h3>
+          <p>
+            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
+            Velit officia consequat
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------- our 6th section start 
+        ---------------------------------------------------------------------- -->
+
+    <section id="contact">
+      <footer>
+        <div class="logo-div">
+          <div class="logo">
+            <a href="#">
+              <img src="../css/AgroAI-logo (1).png" alt="" />
+            </a>
+          </div>
+          <p>@Mini Project 2023</p>
+        </div>
+
+        <div class="footer-menu">
+          <div class="footer-div-2">
+            <h4>Features</h4>
+            <a href="#"><li>Crop Recommendation</li></a>
+            <a href="#"><li>Fertilizers Recommendation</li></a>
+            <a href=""><li>Crop Yield Prediction</li></a>
+          </div>
+
+          <div class="footer-div-3">
+            <h4>Abouts</h4>
+            <a href="#"><li>pricing</li></a>
+            <a href="#"><li>pricing</li></a>
+          </div>
+
+          <div class="footer-div-5">
+            <h4>Get In Touch</h4>
+            <a href="#"><li>Questions Or Feedback?</li></a>
+            <a href="#"><li>We’ll love to help you</li></a>
+          </div>
+        </div>
+      </footer>
+    </section>
   </body>
 </html>
