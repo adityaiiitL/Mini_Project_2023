@@ -141,6 +141,8 @@ def crop_predict():
                 break
 
         print(crop)
+
+        print(nitrogen)
         return render_template('crop_recommendation.html', crop=crop)
 
     return render_template('crop_recommendation.html')
@@ -182,9 +184,10 @@ def fertilizer_predict():
         temperature = request.form.get('temperature')
         humidity = request.form.get('humidity')
         moisture = request.form.get('moisture')
-        soil = request.form.get('soil')
-        crop = request.form.get('crop')
+        soil = str(request.form.get('soil_select'))
+        crop = str(request.form.get('crop_select'))
 
+        print(soil)
         for i in range(5):
             if soil_type[i] == soil:
                 encoded_s = encoded_soil_type[i]

@@ -1,103 +1,217 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <!-- Fertilizer Prediction -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizers Recommendation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    @media screen and (min-width: 1000px){
+      * {
+        box-sizing: border-box;
+      }
+      div.all {
+        margin: auto;
+        max-width: 850px;
+      }
+      body {
+        margin: 0px;
+      }
+      footer {
+        max-width: 850px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      div.main {
+        padding-top: 50px;
+      }
+    }
 
-      <div class="card m-5">
-        <div class="card-body">
-          <h5 class="card-title">Fertilizer Prediction</h5>
-          <hr class="hr hr-blurry" />
-          <form method="post">
-            <div class="mb-3">
-              <label for="nitrogen" class="form-label">Nitrogen</label>
-              <input type="text" class="form-control" id="nitrogen" name="nitrogen" />
-              <div id="emailHelp" class="form-text">
-                Specify the Nitrogen content of the soil over which you are
-                willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="phosphorus" class="form-label">Phosphorus</label>
-              <input type="text" class="form-control" id="phosphorus" name="phosphorus" />
-              <div id="emailHelp" class="form-text">
-                Specify the Phosphorus content of the soil over which you are
-                willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="potassium" class="form-label">Potassium</label>
-              <input type="text" class="form-control" id="potassium" name="potassium" />
-              <div id="emailHelp" class="form-text">
-                Specify the Potassium content of the soil over which you are
-                willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="temperature" class="form-label">Temperature</label>
-              <input type="text" class="form-control" id="temperature" name="temperature" />
-              <div id="emailHelp" class="form-text">
-                Specify the Temperature of the soil and weather over which you
-                are willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="humidity" class="form-label">Humidity</label>
-              <input type="text" class="form-control" id="humidity" name="humidity" />
-              <div id="emailHelp" class="form-text">
-                Specify the Humidity of the soil and weather over which you are
-                willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="moisture" class="form-label">Moisture</label>
-              <input type="text" class="form-control" id="moisture" name="moisture" />
-              <div id="emailHelp" class="form-text">
-                Specify the moisture content of the soil over which you are
-                willing to grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="soil" class="form-label">Soil Type</label>
-              <input type="text" class="form-control" id="soil" name="soil" />
-              <div id="emailHelp" class="form-text">
-                Specify the type of the soil where you are willing to
-                grow the crops.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="crop" class="form-label">Crop Type</label>
-              <input type="text" class="form-control" id="crop" name="crop" />
-              <div id="emailHelp" class="form-text">
-                Specify the crop that you are willing to grow over this piece of
-                land.
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Predict</button>
-            {% if fertilizer %}
-            <div class="alert alert-success" role="alert">
-              {{fertilizer}} is the best fertilizer suitable for this land!
-            </div>
-            {% endif %}
-          </form>
-        </div>
-      </div>
+    span.req {
+      color: red;
+    }
+    p.classy {
+      padding: 15px 0px 15px 15px;
+      border: 0px solid black;
+      margin-bottom: 10px;
+      background-color: #eafafa;
+      font-family: sans-serif;
+      margin-top: 10px;
+    }
+    div.head {
+      background-color: #03787C;
+      padding: 15px 0px 15px 40px;
+      font-family: sans-serif;
+      color: white;
+    }
+    .sass {
+      padding: 9px;
+      border: 1px solid #a6a6a6;
+    }
+    footer {
+      font-size: 0.7em;
+      color: grey;
+      padding: 25px 7% 25px 7%;
+      background-color: rgba(255,255,255,.7);
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #337ab7;
+    }
+
+    div.mass {
+      background-color: #eafafa;
+      padding: 15px 0px 5px 15px; 
+      font-family: sans-serif;
+    }
+    p.lass {
+      padding: 10px;
+      border: 1px dotted black; width: 31%;
+      margin-bottom: -15px;
+      background-color: white;
+      padding: 9px 0px 9px 7px;
+    }
+    form {
+      margin: 0% 7% 0% 7%;
+    }
+    body {
+      margin: 0px;
+    }
+    h1 {color: white;
+      font-weight: 400;}
+    div.all {
+      background-color: white;
+      box-shadow: 0px 0px 11px rgba(0,0,0,.12);
+    }
+    body {
+      background-color: #eafafa;
+      font-family: sans-serif;}
+    .button {
+      background-color: #03787C;
+                  border: none;
+                  padding: 15px 15px 15px 15px;
+                  width: 100%;
+                  color: white;
+                  font-size: 16px;
+    }
+    input.sass {
+      width: 100%
+    }
+    input.choice {
+      margin-top: 10px;
+    }
+    select::-ms-expand {
+  display: none;
+}
+select {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.5em 2em 0.5em 0.5em;
+  border: 1px solid #eee;
+  font: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 15px top 1em, right 10px top 1em;
+  background-size: 5px 5px, 5px 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="main" style="margin: auto">
+    <div class="all">
+    <div class="form">
+    <div class="head">
+    <h1>Fertilizers Recommendation</h1>
+        Specify the your Crop, soil and weather parameters, according to which we will recommend you the best Fertilizer that suits to your agricultural land and Crop.<br><br></div><br>
+    <form action="" method="POST">
+    <div style="margin-bottom: 25px">
+    <span class="req">* <span style="color: black">Required</span></span>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <p class="classy">
+    <label>Nitrogen<span class="req">*</span><br></p>
+    <input type="text" name="nitrogen" placeholder="Enter the Nitrogen content" class="sass"><Br><Br>
+    </label>
+    
+    <p class="classy">
+    <label>Phosphorus <span class="req">*</span><br>
+    </p>
+    <input type="text" name="phosphorus" placeholder="Enter the Phosphorus content" class="sass"><br><br>
+    </label>
+
+    <p class="classy">
+      <label>Potassium<span class="req">*</span><br></p>
+      <input type="text" name="potassium" placeholder="Enter the Potassium content" class="sass"><Br><Br>
+      </label>
+      
+      <p class="classy">
+      <label>Temperature <span class="req">*</span><br>
+      </p>
+      <input type="text" name="temperature" placeholder="Enter the Temperature" class="sass"><br><br>
+      </label>
+
+      <p class="classy">
+        <label>Humidity<span class="req">*</span><br></p>
+        <input type="text" name="humidity" placeholder="Enter the Humidity level" class="sass"><Br><Br>
+        </label>
+        
+        <p class="classy">
+        <label>Moisture <span class="req">*</span><br>
+        </p>
+        <input type="text" name="moisture" placeholder="Enter the moisture content of soil" class="sass"><br><br>
+        </label>
+
+        <p class="classy">
+          <label>Soil Type <span class="req">*</span><br>
+          </p>
+          <select name="soil_select" id="">
+            <option value="Sandy">Sandy</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Clayey">Clayey</option>
+          </select>
+          <br><br>
+          <!-- <input type="text" name="soil" placeholder="Enter the type of Soil" class="sass"><br><br>
+          </label> -->
+
+          <p class="classy">
+            <label>Crop Type <span class="req">*</span><br>
+            </p>
+            <select name="crop_select" id="">
+              <option value="Maize">Maize</option>
+              <option value="Sugarcane">Sugarcane</option>
+              <option value="Cotton">Cotton</option>
+              <option value="Tobacco">Tobacco</option>
+              <option value="Paddy">Paddy</option>
+              <option value="Barley">Barley</option>
+              <option value="Wheat">Wheat</option>
+              <option value="Millets">Millets</option>
+              <option value="Oil Seeds">Oil Seeds</option>
+              <option value="Pulses">Pulses</option>
+              <option value="Ground Nuts">Ground Nuts</option>
+            </select>
+            <br><br><br>
+    
+    <button type="submit" class="button">Predict</button><br><br>
+
+        {% if fertilizer %}
+        <p class="classy">
+          {{fertilizer}} is the best fertilizer suitable for this land!
+          </p>
+        {% endif %}
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
 </html>
