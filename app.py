@@ -1,4 +1,6 @@
 import pickle
+import pandas as pd
+from sklearn import preprocessing
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -150,17 +152,26 @@ def crop_predict():
 
 @app.route('/crop-yield-predict', methods=['GET', 'POST'])
 def crop_yield_predict():
-    # if request.method == 'POST':
-    #     crop = request.form.get('crop')
-    #     year = (int)(request.form.get('year'))
-    #     rainfall = (int)(request.form.get('rainfall'))
-    #     pesticides = (int)(request.form.get('pesticides'))
-    #     temperature = (float)(request.form.get('temperature'))
+    if request.method == 'POST':
+        crop = request.form.get('crop')
+        year = request.form.get('year')
+        rainfall = request.form.get('rainfall')
+        pesticides = request.form.get('pesticides')
+        temperature = request.form.get('temperature')
 
-    #     prediction = crop_yield_predictor.predict([[crop, year, rainfall, pesticides, temperature]])
+        dff = pd.DataFrame([[crop, year, rainfall, pesticides, temperature]], columns=[
+                           'Item', 'Year', 'average_rain_fall_mm_per_year', 'pesticides_tonnes', 'avg_temp'])
 
-    #     print(prediction[0])
-    #     return render_template('crop_yield_prediction.html', Yield=prediction[0])
+        label_encoder = preprocessing.LabelEncoder()
+        dff['Item'] = label_encoder.fit_transform(dff['Item'])
+
+        Standardisation = preprocessing.StandardScaler()
+        dff = Standardisation.fit_transform(dff)
+
+        prediction = crop_yield_predictor.predict(dff)
+
+        print(prediction[0])
+        return render_template('crop_yield_prediction.html', Yield=prediction[0])
 
     return render_template('crop_yield_prediction.html')
 
