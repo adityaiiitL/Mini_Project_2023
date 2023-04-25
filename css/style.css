@@ -14,18 +14,18 @@ body {
   --primry-color: #888888;
   --button-background: #4b709e;
   --primary-button-background: #fe7649;
-  --background-color: #f0f7ff;
+  --background-color: #dcecda;
 }
 
 h1,
 h2 {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   color: var(--main-color);
 }
 
 h4,
 h3 {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   color: var(--main-color);
 }
 
@@ -40,15 +40,19 @@ p,
 a,
 li,
 button {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   color: var(--primry-color);
+  font-size: 20px;
 }
 
-p {
+p,
+.meet_the_team_desc {
   font-size: 1.8rem;
   line-height: 150%;
   font-style: normal;
   font-weight: normal;
+  font-family: "Nunito", sans-serif;
+  color: gray;
 }
 
 a {
@@ -151,14 +155,14 @@ header .right-side-menu .sub-menu a {
 
 header .right-side-menu .sub-menu button {
   padding: 0.5rem 2.5rem;
-  background-color: var(--button-background);
+  background-color: rgb(26, 161, 12);
   color: #fff;
   position: relative;
   z-index: 9;
 }
 
 header .right-side-menu .sub-menu button:hover {
-  background: #1b3d68;
+  background: rgb(72, 112, 19);
 }
 
 header .right-side-menu .sub-menu a li:hover {
@@ -240,8 +244,8 @@ header .right-side-menu .sub-menu a li:hover {
 .common-section {
   width: 100%;
   height: 70rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 9rem;
   padding: 0 20rem;
 }
@@ -262,7 +266,7 @@ header .right-side-menu .sub-menu a li:hover {
   /* width: 45rem; */
   height: 60rem;
   border-radius: 2rem;
-  margin-left: 10rem;
+  /* margin-left: 10rem; */
   margin-top: 2.5rem;
 }
 
@@ -274,54 +278,62 @@ header .right-side-menu .sub-menu a li:hover {
   height: inherit;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
 .common-section .right-side h2 {
-  width: 40rem;
+  width: 60rem;
   font-style: normal;
   font-size: 5.5rem;
   font-weight: bold;
   line-height: 6.3rem;
   margin-bottom: 3rem;
-  text-transform: capitalize;
+  margin-left: 10rem;
 }
 
 .common-section .right-side p {
   width: 40.3rem;
   height: 9rem;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   margin-bottom: 3rem;
+  margin-right: 8rem;
 }
 
 .common-section .right-side .common-button {
   padding: 1rem 3rem;
-  background-color: var(--primary-button-background);
-  margin-right: 2rem;
+  background-color: rgb(26, 161, 12);
   color: #fff;
+  margin-top: 2rem;
 }
 
 .common-section .right-side button:last-child {
   color: var(--main-color);
   background-color: transparent;
+  /*color: white;*/
 }
 
 .common-section .right-side .common-button:hover {
-  background: #cc491d;
+  background: rgb(72, 112, 19);
 }
 
 .common-section .right-side .common-button-normal:hover {
-  background: var(--primary-button-background);
-  color: #f0f7ff;
+  background: rgb(72, 112, 19);
 }
+
+.common-section .right-side .common-button-normal a:hover {
+  color: white !important;
+}
+/*.common-section .right-side .common-button-normal a:hover{*/
+/*  color: white;*/
+/*}*/
 
 /* ------------------- our 3rd section  css style 
   ------------------------------------ */
 
 .section-third {
   width: 100%;
-  height: 70rem;
+  height: 85rem;
   background: var(--background-color);
   padding: 3rem 20rem;
 }
@@ -341,16 +353,28 @@ header .right-side-menu .sub-menu a li:hover {
   margin: auto;
 }
 
+.meet_the_team_desc {
+  width: 600px;
+  height: 9rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  margin-top: 3rem;
+}
+
 .section-third .section-third-task {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 4rem;
+  margin-top: 100px;
 }
 
 .section-third .section-third-task .task-1,
 .section-third .section-third-task .task-2,
 .section-third .section-third-task .task-3 {
-  padding-top: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
   /* background: cornsilk; */
   text-align: center;
   transition: all 0.3s linear;
@@ -370,12 +394,13 @@ header .right-side-menu .sub-menu a li:hover {
 .section-third .section-third-task .task-3 img {
   width: 15rem;
   height: 15rem;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 }
 
 .section-third .section-third-task .task-1 img,
-.section-third .section-third-task .task-2 img {
-  height: 16rem;
+.section-third .section-third-task .task-2 img,
+.section-third .section-third-task .task-3 img {
+  border-radius: 50% 50%;
 }
 
 .section-third .section-third-task .task-3 {
@@ -946,3 +971,106 @@ h3 {
   margin-bottom: 0;
 }
 
+.splide__slide {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  border: black;
+  height: 500px;
+}
+
+.splide__slide img {
+  /* width: 70rem; */
+  max-height: 400px;
+  object-fit: cover;
+  padding-left: 70px;
+  margin-left: 50px;
+}
+
+.splide__slide div {
+  margin-left: 1rem;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 150px;
+}
+
+
+.footer {
+  /* position: fixed; */
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footer .heading {
+  max-width: 1010px;
+  width: 90%;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer .content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem;
+}
+
+.footer .content p {
+  margin-bottom: 1.3rem;
+  color: rgba(0, 0, 0, 0.829);
+}
+
+.footer .content a {
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.829);
+}
+
+.footer .content a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.829);
+}
+
+.footer .content h4 {
+  margin-bottom: 1.3rem;
+  font-size: 19px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+footer hr {
+  margin: 2rem 0;
+}
+
+@media (max-width: 767px) {
+  .footer .content {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .footer {
+    position: unset;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer .content,
+  .footer {
+    font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .footer {
+    position: unset;
+  }
+}

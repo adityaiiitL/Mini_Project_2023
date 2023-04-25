@@ -14,6 +14,11 @@
     <title>AgroAI</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+  <link
+    href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css "
+    rel="stylesheet"
+  />
+  <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
   <body>
     <header>
       <nav>
@@ -31,9 +36,6 @@
             </a>
             <a href="#features">
               <li>Features</li>
-            </a>
-            <a href="#shop">
-              <li>Shop</li>
             </a>
             <a href="#team">
               <li>Team</li>
@@ -71,28 +73,26 @@
       </div>
     </section>
 
-    <section class="common-section" id="section-two">
+    <section class="common-section" id="about">
       <!-- left side of section 2  -->
       <div class="left-side">
-        <figure>
-          <img src="../css/prediction.png" alt="section2" />
-        </figure>
+        <img src="../css/prediction.png" alt="section2" />
       </div>
 
       <!-- right side of section 2  -->
       <div class="right-side">
-        <h2>Make predictions and enhance Crop Yield</h2>
+        <h2>Make predictions and Enhance Crop Yield</h2>
         <p>
           We provide you with some very amazing features of the application that
           allow us to predict the best suitable crop for our farm, recommends
           fertilizers for them and then resulting crop yield.
         </p>
-        <div class="button-group">
+        <div class="button-group" style="margin-right: 13rem">
           <button class="common-button">
             <a href="#features" style="color: white">get started</a>
           </button>
           <button class="common-button-normal">
-            <a href="#how_it_works" style="color: black">how it works</a>
+            <a href="#how_it_works">how it works</a>
           </button>
         </div>
       </div>
@@ -100,123 +100,136 @@
 
     <section class="section-third" id="features">
       <h2>Features</h2>
-      <p>
-        The application offers a range of features to support precision farming
-        and maximize crop yield.
-      </p>
       <div class="section-third-task">
         <a href="{{ url_for('crop_predict') }}">
           <div class="task-1">
-            <img src="../css/crops.png" alt="icon1" />
+            <img
+              src="../css/crops.png"
+              alt="icon1"
+              style="transition: all 0.3s"
+            />
             <h3>Crop Recommendation</h3>
             <p>
-              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-              Velit officia consequat
+              Land over this feature where you can get the best fit Crop
+              suitable for your agricultural land.
             </p>
           </div>
         </a>
 
         <a href="{{ url_for('fertilizer_predict') }}">
           <div class="task-2">
-            <img src="../css/fertilizers.png" alt="icon1" />
+            <img
+              src="../css/fertilizers.png"
+              alt="icon1"
+              style="transition: all 0.3s"
+            />
             <h3>Fertilizers Recommendation</h3>
             <p>
-              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-              Susbcribe to ThapaTechncial.
+              You can get to know which fertilizers types are best for your
+              current crop and then buy them from our portal.
             </p>
           </div>
         </a>
 
         <a href="{{ url_for('crop_yield_predict') }}">
           <div class="task-3">
-            <img src="../css/yield.png" alt="icon1" />
+            <img
+              src="../css/yield.png"
+              alt="icon1"
+              style="transition: all 0.3s"
+            />
             <h3>Crop Yield Prediction</h3>
             <p>
-              Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-              Velit officia consequat
+              We provide you the feature to predict the estimated Crop Yield
+              value for your farm.
             </p>
           </div>
         </a>
       </div>
     </section>
-    ---------------------------------------------------------------------- -->
 
-    <section class="common-section" id="shop">
-      <!-- right side of section 2  -->
-      <div class="right-side" style="margin-left: 50px">
-        <h2>Shop from Us</h2>
-        <p>
-          We offer a wide range of fertilizers to support healthy and vibrant
-          crop growth. Our products are carefully selected and tested to ensure
-          maximum efficacy and safety for the environment.
-        </p>
-        <div class="button-group" style="margin-top: 20px">
-          <button
-            class="common-button"
-            style="background-color: rgb(124, 206, 0)"
-          >
-            <a href="" style="color: white">Buy Now </a>
-          </button>
-        </div>
-      </div>
-
-      <!-- left side of section 2  -->
-      <div class="left-side">
-        <img src="../css/shop.png" alt="section2" />
-      </div>
-    </section>
-
-    <section class="common-section" id="how_it_works">
-      <!-- left side of section 2  -->
-      <div class="left-side">
-        <img src="../css/section5.png" alt="section5" />
-      </div>
-
-      <!-- right side of section 2  -->
-      <div class="right-side">
-        <h2>How It Works</h2>
-
-        <div class="fitness-goals">
-          <div class="rule1">
-            <h3>
-              <i class="fas fa-heart"></i> We will take care of your fitness
-              goals
-            </h3>
-            <p>
-              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Track your daily habits
-            </p>
-          </div>
-
-          <div class="rule2">
-            <h3>
-              <i class="fas fa-heart"></i> Track your daily habits with water
-            </h3>
-            <p>
-              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Track your daily habits
-            </p>
-          </div>
-
-          <div class="rule3">
-            <h3><i class="fas fa-heart"></i> Track your weight and waist</h3>
-            <p>
-              lamet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Track your daily habits
-            </p>
-          </div>
+    <section class="carosuel-design" id="how_it_works">
+      <h1 style="font-size: 70px; text-align: center; margin-top: 100px">
+        How it Works
+      </h1>
+      <div class="splide">
+        <div class="splide__track" style="margin-bottom: 100px;">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="../css/chart1.png" alt="Card image" />
+              <div>
+                <h3>Crop Recommendation</h3>
+                <ul>
+                  <li>
+                    - Using various ML technologies, we find the best fit crop
+                    suitable for your agricultural field.
+                  </li>
+                  <br/>
+                  <li>
+                    - The prediction depends on the parameters such as soil and
+                    weather conditions.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <img src="../css/chart2.png" alt="Card image" />
+              <div>
+                <h3>Fertilizers Recommendation</h3>
+                <ul>
+                  <li>
+                    - Users are provided the feature to determine which
+                    fertilizers are best for their crop growth.
+                  </li>
+                  <br />
+                  <li>
+                    - Following graph shows the feature dependency of the final
+                    fertiliser label, that is, which factors the fertilizer
+                    selection, the most.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <img src="../css/chart3.png" alt="Card image" />
+              <br /><br /><br />
+              <div>
+                <h3>Crop Yield Prediction</h3>
+                <ul>
+                  <li>
+                    - Using advanced Machine Learning technologies and research
+                    works, we have created a prediction system that estimates
+                    the Crop Yield for a specific Crop type.
+                  </li>
+                  <br />
+                  <li>
+                    - User has to specify the required soil and weather
+                    paramters depending on which the Machine Learning Regressor
+                    Model esitmates the Crop Yield.
+                  </li>
+                  <br />
+                  <li>
+                    - This plot shows the analysis of crops versus final Crop
+                    Yield estimation depending on the parameters specified by
+                    the user.
+                  </li>
+                </ul>
+                <br /><br /><br />
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section-third" id="team">
-      <div>
-        <h2>Our Team</h2>
-        <p>
+      <div style="display: flex; flex-direction: column">
+        <h2>Meet The Team</h2>
+        <span class="meet_the_team_desc">
           Meet our talented team of experts who are dedicated to creating
           innovative solutions that address the challenges facing farmers today
           and helping them succeed in a rapidly changing world.
-        </p>
+        </span>
       </div>
       <div class="section-third-task" style="margin-top: 100px">
         <div
@@ -226,11 +239,11 @@
             box-shadow: 0rem 0.4rem 2rem rgba(35, 52, 53, 0.25);
           "
         >
-          <img src="../css/sectionIcon1.png" alt="icon1" />
+          <img src="../css/adi.jpg" alt="icon1" />
           <h3>Aditya Agrawal</h3>
           <p>
-            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-            Velit officia consequat
+            "I believe that technology can revolutionize the way we approach
+            agriculture, and I'm excited to be a part of this project."
           </p>
         </div>
 
@@ -241,57 +254,104 @@
             box-shadow: 0rem 0.4rem 2rem rgba(35, 52, 53, 0.25);
           "
         >
-          <img src="../css/sectionIcon2.png" alt="icon1" />
+          <img src="../css/tiya.jpeg" alt="icon1" />
           <h3>Tiya Bansal</h3>
           <p>
-            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-            Susbcribe to ThapaTechncial.
+            "I'm passionate about finding sustainable solutions for farming
+            practices, and this project aligns with that goal."
           </p>
         </div>
 
         <div class="task-3">
-          <img src="../css/sectionIcon3.png" alt="icon1" />
+          <img src="../css/tanya.jpeg" alt="icon1" />
           <h3>Tanya Bharti</h3>
           <p>
-            Lamet minim mollit non deserunt ullamco est sit aliq do amet sint.
-            Velit officia consequat
+            "I'm looking forward to applying ML skills to help farmers optimize
+            their crop yield."
           </p>
         </div>
       </div>
     </section>
 
+    <!-- ----------------------------- our 6th section start 
+        ---------------------------------------------------------------------- -->
+
     <section id="contact">
-      <footer>
-        <div class="logo-div">
-          <div class="logo" style="width: 5px; height: 120px">
-            <a href="#">
-              <img src="../css/AgroAI-logo (1).png" alt="" />
-            </a>
+      <div class="footer">
+        <div class="content" style="margin-top: 100px">
+          <div class="services">
+            <h4>Services</h4>
+            <p>
+              <a href="{{ url_for('crop_predict') }}">Crop Recommendation</a>
+            </p>
+            <p>
+              <a href="{{ url_for('fertilizer_predict') }}"
+                >Fertilizers Recommendation</a
+              >
+            </p>
+            <p>
+              <a href="{{ url_for('crop_yield_predict') }}"
+                >Crop Yield Prediction</a
+              >
+            </p>
           </div>
-          <p>@Mini Project 2023</p>
+          <div class="social-media">
+            <h4>Social</h4>
+            <p>
+              <a href="https://www.linkedin.com/in/aditya-agrawal-87ab6a200/"
+                ><i class="fab fa-linkedin"></i> Linkedin</a
+              >
+            </p>
+            <p>
+              <a href="https://twitter.com/TiyaTwts"
+                ><i class="fab fa-twitter"></i> Twitter</a
+              >
+            </p>
+            <p>
+              <a href="https://github.com/adityaiiitL/Mini_Project_2023"
+                ><i class="fab fa-github"></i> Github</a
+              >
+            </p>
+          </div>
+          <div class="links">
+            <h4>Quick links</h4>
+            <p><a href="#">Home</a></p>
+            <p><a href="#about">About</a></p>
+            <p><a href="#features">Features</a></p>
+          </div>
+          <div class="details">
+            <h4 class="address">Address</h4>
+            <p>
+              IIIT Lucknow, C.G City, <br />
+              Ahamamau, Lucknow
+            </p>
+            <h4 class="mail">Email</h4>
+            <p><a href="#">lit2020023@iiitl.ac.in</a></p>
+            <p><a href="#">lit2020027@iiitl.ac.in</a></p>
+            <p><a href="#">lcs2020072@iiitl.ac.in</a></p>
+          </div>
         </div>
-
-        <div class="footer-menu">
-          <div class="footer-div-2">
-            <h4>Features</h4>
-            <a href="#"><li>Crop Recommendation</li></a>
-            <a href="#"><li>Fertilizers Recommendation</li></a>
-            <a href=""><li>Crop Yield Prediction</li></a>
-          </div>
-
-          <div class="footer-div-3">
-            <h4>Abouts</h4>
-            <a href="#"><li>pricing</li></a>
-            <a href="#"><li>pricing</li></a>
-          </div>
-
-          <div class="footer-div-5">
-            <h4>Get In Touch</h4>
-            <a href="#"><li>Questions Or Feedback?</li></a>
-            <a href="#"><li>We’ll love to help you</li></a>
-          </div>
-        </div>
-      </footer>
+        <footer>
+          <hr />
+          &copy; 2023 AgroAI Pvt. Ltd.
+        </footer>
+      </div>
     </section>
+    <script>
+      new Splide(".splide", {
+        type: "loop",
+        perPage: 1,
+        perMove: 1,
+        gap: "1rem",
+        breakpoints: {
+          768: {
+            perPage: 2,
+          },
+          576: {
+            perPage: 1,
+          },
+        },
+      }).mount();
+    </script>
   </body>
 </html>
